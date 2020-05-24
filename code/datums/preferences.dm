@@ -744,8 +744,6 @@ datum/preferences
 		select += "</select>"
 		return select.Join()
 
-	/*
-
 	proc/generate_select_table2(var/id, var/ah_var, var/list/style_list)
 		var/list/select = list()
 		select += "<select id='[id]'>"
@@ -819,7 +817,6 @@ datum/preferences
 
 	proc/do_nothing(var/id, var/ah_var, var/list/style_list)
 		return "nothing"
-	*/
 
 	Topic(href, href_list[])
 		var/table_id = href_list["id"]
