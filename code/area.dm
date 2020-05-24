@@ -379,7 +379,7 @@
 	teleport_blocked = 2
 	force_fullbright = 1
 	expandable = 0
-	filler_turf = "/turf/unsimulated/floor/setpieces/gauntlet"
+	// filler_turf = "/turf/unsimulated/floor/setpieces/gauntlet"
 
 /area/cavetiny
 	name = "Caves"
@@ -1117,6 +1117,10 @@
 
 /area/station/turret_protected/sea_crashed //dumb area pathing aRRGHHH
 	name = "Crashed Transport"
+	icon_state = "purple"
+
+/area/water_treatment
+	name = "Water Treatment Facility"
 	icon_state = "purple"
 
 
