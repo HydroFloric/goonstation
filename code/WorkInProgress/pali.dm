@@ -325,11 +325,11 @@ var/datum/text_benchmarking/text_benchmarking = new
 	var/start = TIME
 	. = list()
 	var/datum/preferences/p = new
-	for(var/i in 1 to 30)
+	for(var/j in 1 to 30)
 		. += "<select id='[id]'>"
 		for (var/i in style_list)
 			//this is for setting the default value
-			if (AH && i == ah_var)
+			if (p.AH && i == ah_var)
 				. += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
 			else
 				. += "<option value='[style_list[i]]'>[i]</option>"
@@ -349,9 +349,9 @@ var/datum/text_benchmarking/text_benchmarking = new
 	for(var/i in 1 to 30)
 		var/list/select = list()
 		select += "<select id='[id]'>"
-		for (var/i in style_list)
+		for (var/j in style_list)
 			//this is for setting the default value
-			if (AH && i == ah_var)
+			if (p.AH && i == ah_var)
 				select += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
 			else
 				select += "<option value='[style_list[i]]'>[i]</option>"
