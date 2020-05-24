@@ -318,6 +318,48 @@ var/datum/text_benchmarking/text_benchmarking = new
 	. = jointext(., "")
 	boutput(usr, "end [TIME - start]")
 
+/mob/verb/make_me_some_tables2()
+	var/id = "whatever"
+	var/ah_var = "also whatever"
+	var/list/style_list = customization_styles
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += "<select id='[id]'>"
+		for (var/i in style_list)
+			//this is for setting the default value
+			if (AH && i == ah_var)
+				. += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
+			else
+				. += "<option value='[style_list[i]]'>[i]</option>"
+		. += "</select>"
+	boutput(usr, "not end [TIME - start]")
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+
+/mob/verb/make_me_some_tables3()
+	var/id = "whatever"
+	var/ah_var = "also whatever"
+	var/list/style_list = customization_styles
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		var/list/select = list()
+		select += "<select id='[id]'>"
+		for (var/i in style_list)
+			//this is for setting the default value
+			if (AH && i == ah_var)
+				select += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
+			else
+				select += "<option value='[style_list[i]]'>[i]</option>"
+		select += "</select>"
+		. += select.Join()
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
 /mob/verb/join1()
 	var/start = TIME
 	var/list/select = list()
