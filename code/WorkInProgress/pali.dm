@@ -318,6 +318,26 @@ var/datum/text_benchmarking/text_benchmarking = new
 	. = jointext(., "")
 	boutput(usr, "end [TIME - start]")
 
+/mob/verb/join1()
+	var/start = TIME
+	var/list/select = list()
+	select += "<select id='[id]'>"
+	for (var/i in 1 to 2000)
+		select += "some sting blah blah blah [i] [i] blah blah blah blah"
+	boutput(usr, "before join [TIME - start]")
+	. = select.Join()
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/join2()
+	var/start = TIME
+	var/list/select = list()
+	select += "<select id='[id]'>"
+	for (var/i in 1 to 2000)
+		select += "some sting blah blah blah [i] [i] blah blah blah blah"
+	boutput(usr, "before join [TIME - start]")
+	. = jointext(select, "")
+	boutput(usr, "end [TIME - start]")
+
 /mob/verb/big_string()
 	return {"
 	[src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name]
