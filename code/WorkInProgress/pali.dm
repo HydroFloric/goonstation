@@ -318,6 +318,91 @@ var/datum/text_benchmarking/text_benchmarking = new
 	. = jointext(., "")
 	boutput(usr, "end [TIME - start]")
 
+proc/gl_generate_select_table(var/id, var/ah_var, var/list/style_list)
+	var/list/select = list()
+	var/datum/appearanceHolder/AH = null
+	select += "<select id='[id]'>"
+	for (var/i in style_list)
+		//this is for setting the default value
+		if (AH && i == ah_var)
+			select += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
+		else
+			select += "<option value='[style_list[i]]'>[i]</option>"
+	select += "</select>"
+	return select.Join()
+
+/mob/verb/make_me_some_tables_gl()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += gl_generate_select_table("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_b_2()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.generate_select_table2("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_b_3()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.generate_select_table3("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_b_4()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.generate_select_table4("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_b_5()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.generate_select_table5("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_b_6()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.generate_select_table6("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_b_7()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.generate_select_table7("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_b_8()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.generate_select_table8("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
 /mob/verb/do_nothing()
 	var/start = TIME
 	. = list()

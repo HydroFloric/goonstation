@@ -744,6 +744,77 @@ datum/preferences
 		select += "</select>"
 		return select.Join()
 
+	proc/generate_select_table2(var/id, var/ah_var, var/list/style_list)
+		var/list/select = list()
+		select += "<select id='[id]'>"
+		for (var/i in style_list)
+			//this is for setting the default value
+			if (AH && i == ah_var)
+				select += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
+			else
+				select += "<option value='[style_list[i]]'>[i]</option>"
+		select += "</select>"
+		return select.Join()
+
+	proc/generate_select_table3(var/id, var/ah_var, var/list/style_list)
+		var/list/select = list()
+		select += "<select id='[id]'>"
+		for (var/i in style_list)
+			select += "<option value='[style_list[i]]'>[i]</option>"
+		select += "</select>"
+		return select.Join()
+
+	proc/generate_select_table4(var/id, var/ah_var, var/list/style_list)
+		. = list()
+		. += "<select id='[id]'>"
+		for (var/i in style_list)
+			. += "<option value='[style_list[i]]'>[i]</option>"
+		. += "</select>"
+		return jointext(., "")
+
+	proc/generate_select_table5(var/id, var/ah_var, var/list/style_list)
+		var/list/select = list()
+		select += "<select id='[id]'>"
+		for (var/i in customization_styles)
+			//this is for setting the default value
+			if (AH && i == ah_var)
+				select += "<option value='[customization_styles[i]]' selected='selected'>[i]</option>"
+			else
+				select += "<option value='[customization_styles[i]]'>[i]</option>"
+		select += "</select>"
+		return select.Join()
+
+	proc/generate_select_table6(var/id, var/ah_var, var/list/style_list)
+		var/list/select = list()
+		select += "<select id='[id]'>"
+		for (var/i in style_list)
+			select += "<option value='customization_stylesi'>i</option>"
+		select += "</select>"
+		return select.Join()
+
+	proc/generate_select_table7(var/id, var/ah_var, var/list/style_list)
+		var/list/select = list()
+		select += "<select id='[id]'>"
+		for (var/i in style_list)
+			//this is for setting the default value
+			if (AH && i == ah_var)
+				select += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
+			else
+				select += "<option value='[style_list[i]]'>[i]</option>"
+		select += "</select>"
+		select = select.Join()
+
+	proc/generate_select_table8(var/id, var/ah_var, var/list/style_list)
+		var/list/select = list()
+		select += "<select id='[id]'>"
+		for (var/i in style_list)
+			//this is for setting the default value
+			if (AH && i == ah_var)
+				select += "<option value='[style_list[i]]' selected='selected'>[i]</option>"
+			else
+				select += "<option value='[style_list[i]]'>[i]</option>"
+		select += "</select>"
+
 	proc/do_nothing(var/id, var/ah_var, var/list/style_list)
 		return "nothing"
 
