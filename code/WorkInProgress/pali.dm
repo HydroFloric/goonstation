@@ -331,12 +331,53 @@ proc/gl_generate_select_table(var/id, var/ah_var, var/list/style_list)
 	select += "</select>"
 	return select.Join()
 
+proc/gl_generate_select_table2(var/id, var/ah_var, var/list/style_list)
+	var/list/select = list()
+	var/datum/appearanceHolder/AH = null
+	select += "<select id='[id]'>"
+	for (var/i in style_list)
+		//this is for setting the default value
+		if (AH && i == ah_var)
+			select += "<option value='style_listi' selected='selected'>i</option>"
+		else
+			select += "<option value='style_listi'>i</option>"
+	select += "</select>"
+	return select.Join()
+
+proc/gl_generate_select_table3(var/id, var/ah_var, var/list/style_list)
+	var/list/select = list()
+	var/datum/appearanceHolder/AH = null
+	select += "<select id='[id]'>"
+	for (var/i in style_list)
+		//this is for setting the default value
+		if (AH && i == ah_var)
+			select += "<option value='style_list[i]' selected='selected'>[i]</option>"
+		else
+			select += "<option value='style_list[i]'>[i]</option>"
+	select += "</select>"
+	return select.Join()
+
 /mob/verb/make_me_some_tables_gl()
 	var/start = TIME
 	. = list()
-	var/datum/preferences/p = new
 	for(var/i in 1 to 30)
 		. += gl_generate_select_table("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_gl2()
+	var/start = TIME
+	. = list()
+	for(var/i in 1 to 30)
+		. += gl_generate_select_table2("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
+/mob/verb/make_me_some_tables_gl3()
+	var/start = TIME
+	. = list()
+	for(var/i in 1 to 30)
+		. += gl_generate_select_table3("custom_third", "", customization_styles)
 	. = jointext(., "")
 	boutput(usr, "end [TIME - start]")
 
