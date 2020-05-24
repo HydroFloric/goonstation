@@ -312,8 +312,9 @@ var/datum/text_benchmarking/text_benchmarking = new
 /mob/verb/make_me_some_tables()
 	var/start = TIME
 	. = list()
+	var/datum/preferences/p = new
 	for(var/i in 1 to 30)
-		. += generate_select_table("custom_third", "", customization_styles)
+		. += p.generate_select_table("custom_third", "", customization_styles)
 	. = jointext(., "")
 	boutput(usr, "end [TIME - start]")
 
