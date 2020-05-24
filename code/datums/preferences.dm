@@ -744,6 +744,9 @@ datum/preferences
 		select += "</select>"
 		return select.Join()
 
+	proc/do_nothing(var/id, var/ah_var, var/list/style_list)
+		return "nothing"
+
 	Topic(href, href_list[])
 		var/table_id = href_list["id"]
 		//the if block determines whatever to save the incoming choice in the AppearanceHolder. Then in all cases it will update the icon and send it to the browser

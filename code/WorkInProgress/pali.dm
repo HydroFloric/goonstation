@@ -318,6 +318,15 @@ var/datum/text_benchmarking/text_benchmarking = new
 	. = jointext(., "")
 	boutput(usr, "end [TIME - start]")
 
+/mob/verb/do_nothing()
+	var/start = TIME
+	. = list()
+	var/datum/preferences/p = new
+	for(var/i in 1 to 30)
+		. += p.do_nothing("custom_third", "", customization_styles)
+	. = jointext(., "")
+	boutput(usr, "end [TIME - start]")
+
 /mob/verb/make_me_some_tables2()
 	var/id = "whatever"
 	var/ah_var = "also whatever"
