@@ -215,9 +215,11 @@ datum/preferences
 		underwear_s = null
 		eyes_s = null
 
-#define MESSAGE_TICK_USAGE message_admins("[__LINE__]: [world.tick_usage]")
+#define MESSAGE_TICK_USAGE message_admins("[__LINE__], [unique_id]: [world.tick_usage]")
 
 	proc/ShowChoices(mob/user)
+		SHOULD_NOT_SLEEP(1)
+		var/unique_id = rand(1, 100000)
 		//LAGCHECK(LAG_HIGH)
 		MESSAGE_TICK_USAGE
 
@@ -712,8 +714,8 @@ datum/preferences
 		MESSAGE_TICK_USAGE
 
 		//LAGCHECK(LAG_MED)
-		if(!forget_about_traits)
-			traitPreferences.updateTraits(user)
+		/*if(!forget_about_traits)
+			traitPreferences.updateTraits(user)*/
 		//LAGCHECK(LAG_REALTIME)
 		MESSAGE_TICK_USAGE
 
