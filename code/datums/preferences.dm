@@ -581,7 +581,9 @@ datum/preferences
 		</th>
 		<td>
 			<a href='[pref_link]detail=input'>&#9998;</a>
-			<span class='colorbit' style="background-color: [AH.customization_third_color];">[AH.customization_third_color]</span>
+			<span class='colorbit' style="background-color: [AH.customization_third_color];">[AH.customization_third_color]</span>"}
+		MESSAGE_TICK_USAGE
+		dat += {"
 			[generate_select_table("custom_third", AH.customization_third, customization_styles)]
 		</td>
 	</tr>
