@@ -321,7 +321,6 @@ var/datum/text_benchmarking/text_benchmarking = new
 /mob/verb/join1()
 	var/start = TIME
 	var/list/select = list()
-	select += "<select id='[id]'>"
 	for (var/i in 1 to 2000)
 		select += "some sting blah blah blah [i] [i] blah blah blah blah"
 	boutput(usr, "before join [TIME - start]")
@@ -331,7 +330,6 @@ var/datum/text_benchmarking/text_benchmarking = new
 /mob/verb/join2()
 	var/start = TIME
 	var/list/select = list()
-	select += "<select id='[id]'>"
 	for (var/i in 1 to 2000)
 		select += "some sting blah blah blah [i] [i] blah blah blah blah"
 	boutput(usr, "before join [TIME - start]")
