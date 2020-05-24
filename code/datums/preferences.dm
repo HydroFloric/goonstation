@@ -312,7 +312,8 @@ datum/preferences
 		if (src.profile_modified)
 			unsaved_changes_warning = {"<div id="unsaved-warning"><strong>You may have unsaved changes.</strong><br>Any unsaved changes will take effect for this round only.</div> "}
 		MESSAGE_TICK_USAGE
-		var/dat = {"
+		var/list/dat = list()
+		dat += {"
 [script]
 <style type="text/css">
 	a:link {
@@ -418,7 +419,9 @@ datum/preferences
 [jointext(profile_menu, "")]
 <div style="clear: both; margin: 0.5em;"></div>
 [unsaved_changes_warning]
-<table id="prefs">
+<table id="prefs">"}
+		MESSAGE_TICK_USAGE
+		dat += {"
 	<tr>
 		<th colspan="3">Character Setup</th>
 	</tr>
@@ -476,7 +479,9 @@ datum/preferences
 			[length(src.flavor_text) ? src.flavor_text : "<em>None</em>"]
 		</td>
 	</tr>
-	<tr>
+	<tr>"}
+		MESSAGE_TICK_USAGE
+		dat += {"
 		<th>
 			Security Note<span class="info-thing" title="This text is added to your Security Record. It has no other effects.">?</span>
 		</th>
@@ -583,7 +588,9 @@ datum/preferences
 			<span class='colorbit' style="background-color: [AH.customization_second_color];">[AH.customization_second_color]</span>
 			[generate_select_table("custom_second", AH.customization_second, customization_styles)]
 		</td>
-	</tr>
+	</tr>"}
+		MESSAGE_TICK_USAGE
+		dat += {"
 	<tr>
 		<th>
 			Bottom Detail<span class="info-thing" title="Hair or other features. This one is placed at under the others, making it the best choice for things like beards.">?</span>
@@ -675,7 +682,9 @@ datum/preferences
 			<br><a href="[pref_link]tickets=1" class="toggle">[crap_checkbox(src.view_tickets)] Auto-open end-of-round ticket summary</a><span class="info-thing" title="The end-of-round ticketing summary shows the various tickets and fines that were handed out. If this option is off, you can still see them on Goonhub (goonhub.com).">?</span>
 		</td>
 	</tr>
-	<tr>
+	<tr>"}
+		MESSAGE_TICK_USAGE
+		dat += {"
 		<th>
 			Controls<span class="info-thing" title="Various options for how you control your character and the game.">?</span>
 		</th>
@@ -708,7 +717,7 @@ datum/preferences
 		//LAGCHECK(LAG_REALTIME)
 		MESSAGE_TICK_USAGE
 
-		user.Browse(dat,"window=preferences;size=666x750;title=Character Setup")
+		user.Browse(dat.Join(),"window=preferences;size=666x750;title=Character Setup")
 		MESSAGE_TICK_USAGE
 
 
