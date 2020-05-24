@@ -500,7 +500,9 @@ datum/preferences
 			<a href='[pref_link]medical_flavor_text=input' style="float: left; margin: 0.2em;">&#9998;</a>
 			[length(src.medical_note) ? src.medical_note : "<em>None</em>"]
 		</td>
-	</tr>
+	</tr>"}
+		MESSAGE_TICK_USAGE
+		dat += {"
 	<tr>
 		<th>
 			Occupation<span class="info-thing" title="These are your occupation / job preferences. This only affects your job if you join when a round starts.">?</span>
@@ -540,7 +542,9 @@ datum/preferences
 		<td colspan="2">
 			<a href='[pref_link]voicetype=input'>[AH.voicetype]</a>
 		</td>
-	</tr>
+	</tr>"}
+		MESSAGE_TICK_USAGE
+		dat += {"
 
 	<tr>
 		<th colspan="3">

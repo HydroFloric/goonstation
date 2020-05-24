@@ -301,6 +301,14 @@ var/datum/text_benchmarking/text_benchmarking = new
 /mob/verb/benchmark_off_topic()
 	text_benchmarking.off_topic()
 
+/mob/verb/test_length()
+	var/start = TIME
+	var/str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+	str = "[str][str][str][str][str]"
+	for(var/i = 1 to 1000)
+		. = length(str) ? "yes" : "no"
+	boutput(usr, "end [TIME - start]")
+
 /mob/verb/big_string()
 	return {"
 	[src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name]
