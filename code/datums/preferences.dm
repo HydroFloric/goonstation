@@ -720,8 +720,8 @@ datum/preferences
 		MESSAGE_TICK_USAGE
 
 		//LAGCHECK(LAG_MED)
-		/*if(!forget_about_traits)
-			traitPreferences.updateTraits(user)*/
+		if(!forget_about_traits)
+			traitPreferences.updateTraits(user)
 		//LAGCHECK(LAG_REALTIME)
 		MESSAGE_TICK_USAGE
 
@@ -743,6 +743,8 @@ datum/preferences
 				select += "<option value='[style_list[i]]'>[i]</option>"
 		select += "</select>"
 		return select.Join()
+
+	/*
 
 	proc/generate_select_table2(var/id, var/ah_var, var/list/style_list)
 		var/list/select = list()
@@ -817,6 +819,7 @@ datum/preferences
 
 	proc/do_nothing(var/id, var/ah_var, var/list/style_list)
 		return "nothing"
+	*/
 
 	Topic(href, href_list[])
 		var/table_id = href_list["id"]

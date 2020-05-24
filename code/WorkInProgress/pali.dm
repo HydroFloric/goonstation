@@ -256,7 +256,7 @@ proc/make_chat_maptext(atom/target, msg, style = "")
 
 // temporary crap, you shouldn't see this
 // //
-
+/*
 var/datum/text_benchmarking/text_benchmarking = new
 
 /datum/text_benchmarking
@@ -838,6 +838,8 @@ proc/gl_generate_select_table3(var/id, var/ah_var, var/list/style_list)
 	[src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name]
 	[src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name] [src.name]
 	"}
+*/
+
 // I'm archiving a slightly improved version of the hell portal which is now gone
 
 /obj/hellportal
